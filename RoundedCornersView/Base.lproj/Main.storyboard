@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RoundedCornersView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DnN-VG-Tlh" customClass="RoundedView" customModule="RoundedCornersView" customModuleProvider="target">
+                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DnN-VG-Tlh" secondAttribute="height" id="47u-8O-1wc"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="u8T-th-rjo">
+                                <rect key="frame" x="20" y="712" width="374" height="150"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="P5L-AW-sjL">
+                                        <rect key="frame" x="-2" y="0.0" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yJG-1z-9tr"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5NM-zb-QU8">
+                                        <rect key="frame" x="-2" y="40" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="PU7-78-O5Q"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cNn-jJ-k2g">
+                                        <rect key="frame" x="-2" y="80" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="GA0-VG-wyn"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="chG-hS-2hX">
+                                        <rect key="frame" x="-2" y="120" width="378" height="31"/>
+                                        <connections>
+                                            <action selector="radiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="K5G-sj-RAI"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="u8T-th-rjo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Tc-m2-QW1"/>
+                            <constraint firstItem="u8T-th-rjo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7np-5B-FMh"/>
+                            <constraint firstItem="DnN-VG-Tlh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WOd-Vu-89o"/>
+                            <constraint firstItem="DnN-VG-Tlh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l8F-zS-Knp"/>
+                            <constraint firstItem="DnN-VG-Tlh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tsO-KB-gmq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u8T-th-rjo" secondAttribute="trailing" constant="20" id="xIX-Zb-BqN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLeftCorner" destination="chG-hS-2hX" id="RXw-fW-Txn"/>
+                        <outlet property="bottomRightCorner" destination="cNn-jJ-k2g" id="O4u-Lx-6dG"/>
+                        <outlet property="roundedView" destination="DnN-VG-Tlh" id="U4g-MC-ymr"/>
+                        <outlet property="topLeftCorner" destination="P5L-AW-sjL" id="bj5-SY-P8v"/>
+                        <outlet property="topRightCorner" destination="5NM-zb-QU8" id="pg5-xt-86H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
